@@ -1,0 +1,42 @@
+{% static load %}
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+  <style>
+    body{
+      background-color:white;
+    }
+    .x{
+      
+      width:255px;
+      height:205px;
+      margin:auto;
+      margin:auto;
+      background-color:white;
+    }
+  
+  </style>
+</head>
+<body>
+ 
+  <div class="x">
+    <img src= {% static "care2.gif" %} width="250px;" height="200px;"/>
+  </div>
+  
+  <script>
+    window.onload = function(){
+      
+      setTimeout(function(){
+         
+        document.querySelector("img").src={% static "cap.jpg" %};
+        document.querySelector("body").style.background="red";
+      },1000)
+      
+      
+    }
+  
+  </script>
+</body>
+</html>

